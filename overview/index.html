@@ -838,7 +838,7 @@
 </ul>
 <h4 id="fader-filtering">Fader Filtering</h4>
 <p>Under that is the fader filtering for the level fader to ease your mixing. It works by applying a filter CHOP to that value to smooth out sudden changes. Press the  <img alt="Fader Filtering" src="../Images/FaderFilteringButton.png" />  button to enable fader filtering, and adjust the value to increase or decrease filtering on that layer.</p>
-<div class="highlight"><pre><span></span><code>NOTE: This adds some CPU time, but can be useful for users with a mouse or touchpad for smoother mixing.
+<div class="highlight"><pre><span></span><code>NOTE: This adds CPU time per layer, but can be useful for users with a mouse or touchpad for smoother mixing. Use with discretion.
 </code></pre></div>
 <h4 id="layer-name">Layer Name</h4>
 <ul>
@@ -911,7 +911,8 @@
 <ul>
 <li>
 <p>To start, in a blank TouchDesigner project create a Base COMP named 'scene'. </p>
-<p>AAVJ Compatible scenes should always be Base COMPs, <strong>not container COMPs</strong>. Container COMPs use panel values which are not necessary for AAVJ scenes. Container COMPs should only be used for custom Components.</p>
+<div class="highlight"><pre><span></span><code>AAVJ Compatible scenes *should always be Base COMPs*, ***not Container COMPs***. Container COMPs use panel values which are not necessary for AAVJ scenes. Container COMPs should only be used for custom Components.
+</code></pre></div>
 </li>
 <li>
 <p>Inside this Base COMP, as an example we can create a noise TOP. set the resolution to the resolution you typically use in your workflow, i.e. 1280x720 or 1920x1080.</p>
@@ -932,11 +933,12 @@
 <p>Find the lock icon and lock this operator so we don’t eat up unnecessary resources in our interface.</p>
 </li>
 </ul>
-<p>To add custom parameters to a scene, right-click the base COMP and hit Custom Parameters. Here we can add parameters by type that will be attached to this component. To use those parameters in your network, go back inside and use a Parameter CHOP or Parameter DAT.</p>
+<p>To add custom parameters to a scene, right-click our 'scene' base COMP and hit Custom Parameters. Here we can add parameters by type that will be attached to this component. To use those parameters in your network, go back inside and use a Parameter CHOP or Parameter DAT.</p>
+<p>Right click the 'scene' base COMP and save the .TOX file into '/AAVJ 2025/Assets/Scenes'. Once you do this, if your scenes Asset Browser is aimed at this location, you should see it populate as an item there.</p>
 <h2 id="drag-n-drop">Drag N Drop</h2>
-<p>Let’s go ahead and drop our saved .tox file into our project at Layer 1 Slot 1.</p>
-<p>As you can see the thumbnail for that tox network appears in our project.</p>
-<p>additionally, the custom parameters associated with that tox network will appear in the Parameters widget when we right-click on the thumbnail.</p>
+<p>Let’s go ahead and drop our saved scene into our project at Layer 1 Slot 1. As you can see the thumbnail for that scene appears in our project.</p>
+<p><img alt="" src="../Images/SceneDrop.gif" /></p>
+<p>Additionally, the custom parameters associated with that tox network will appear in the Parameters widget when we right-click on the thumbnail.</p>
 <p>You can activate this content slot in your mix by left-clicking it to launch it on that layer.</p>
 <h2 id="navigation">Navigation</h2>
 <p>You will notice when you right-click many of the interface components, they become highlighted with a white border.</p>
