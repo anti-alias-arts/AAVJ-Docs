@@ -499,9 +499,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#order" class="md-nav__link">
+  <a href="#layer-order" class="md-nav__link">
     <span class="md-ellipsis">
-      Order
+      Layer Order
     </span>
   </a>
   
@@ -525,6 +525,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#scene-management" class="md-nav__link">
     <span class="md-ellipsis">
@@ -534,24 +539,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#mid-bar" class="md-nav__link">
     <span class="md-ellipsis">
       Mid Bar
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log" class="md-nav__link">
-    <span class="md-ellipsis">
-      Log
     </span>
   </a>
   
@@ -592,6 +583,21 @@
       Custom Components
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Custom Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -831,56 +837,46 @@
 </li>
 </ul>
 <h4 id="fader-filtering">Fader Filtering</h4>
-<ul>
-<li>
-<p>Under that is the fader filtering for the level fader to ease your mixing. It works by applying a filter CHOP to that value to smooth out sudden changes. Press the <img alt="Fader Filtering" src="../Images/FaderFilteringButton.png" />  button to enable fader filtering, and adjust the value to increase or decrease filtering on that layer.</p>
-<p>NOTE: This adds some CPU time, but can be useful for users with a mouse or touchpad for smoother mixing.</p>
-</li>
-</ul>
+<p>Under that is the fader filtering for the level fader to ease your mixing. It works by applying a filter CHOP to that value to smooth out sudden changes. Press the  <img alt="Fader Filtering" src="../Images/FaderFilteringButton.png" />  button to enable fader filtering, and adjust the value to increase or decrease filtering on that layer.</p>
+<div class="highlight"><pre><span></span><code>NOTE: This adds some CPU time, but can be useful for users with a mouse or touchpad for smoother mixing.
+</code></pre></div>
 <h4 id="layer-name">Layer Name</h4>
 <ul>
 <li>In the same layer control box, you will see the name of your layer, i.e., ‘Layer 1, 2, 3’ etc. Users can double-click that layer name to assign a different one manually.</li>
 </ul>
-<h4 id="order">Order</h4>
+<h4 id="layer-order">Layer Order</h4>
 <p><img alt="" src="../Images/LayerSwap.gif" /></p>
 <ul>
 <li>The order of layers can be swapped by <strong>right-click dragging</strong> the layer control box of one layer and dropping it onto another layer. This will affect the order in which these layers are composited into the mix.</li>
 </ul>
 <h4 id="transition-time">Transition Time</h4>
-<ul>
-<li>To the right of the layer control box is the transition time fader, which will determine how long it takes to fade between scenes on that layer. Use the vertical fader or enter a float value to determine the filter length of the transition to a new scene.</li>
-</ul>
+<p>To the right of the layer control box is the transition time fader, which will determine how long it takes to fade between scenes on that layer. Use the vertical fader or enter a float value to determine the filter length of the transition to a new scene.</p>
 <h4 id="scene-slots">Scene Slots</h4>
 <ul>
 <li>
-<p>To the right of the layer control box on each layer are the scene ‘slots’. This is where users will drag and drop their scenes, movies, and sources. A thumbnail image will appear when an AAVJ compatible .tox network, movie file, or source is added from the file browser or built-in asset browser lister. </p>
+<p>To the right of the layer control box on each layer are the scene ‘slots’. This is where users will drag and drop their scenes, movies, and sources. A thumbnail image will appear when an AAVJ compatible .TOX network, movie file, or source is added from the file browser or built-in asset browser lister.</p>
 </li>
 <li>
-<p>Slots can be swapped with any other slot on any layer by right-click dragging and dropping onto a different scene slot.</p>
+<p>Slots can be swapped with any other slot on any layer by <strong>right-click dragging</strong> and dropping onto a different scene slot.</p>
 </li>
 </ul>
-<h4 id="scene-management">Scene Management</h4>
+<h3 id="scene-management">Scene Management</h3>
 <ul>
 <li>
 <p>Users can also clear a scene slot by double right-clicking and selecting ‘Clear’, effectively removing that scene from the project.</p>
 </li>
 <li>
-<p>Users can also enable/disable OSC Out on that slot by enabling or disabling it using that pop-menu item.</p>
+<p>Left-clicking any slot in a layer will activate that scene in that layer, and inputting that into the mix.</p>
 </li>
 <li>
-<p>Left-clicking any slot in a layer will activate that scene in that layer, and inputting that into the mix. If that scene has been collapsed previously, AAVJ will leverage the AAVJ compression script in reverse and fetch the necessary assets inside the network and reversing the compression.</p>
-</li>
-<li>
-<p>When active, a scene slot’s background and border will be colored red to indicate its status. Only one scene may be active at a time.</p>
+<p>When active, a scene slot’s background and border will be colored red to indicate its status. Only one scene may be active at a time on each layer.</p>
 </li>
 </ul>
 <h3 id="mid-bar">Mid Bar</h3>
-<p>Below our layer grid, we will see our project FPS, as well as how much VRAM or video memory is loaded into the project. This will vary as the interface is used due to the dynamic ‘VRAM compression script’ AAVJ uses to manage memory on the fly.</p>
-<ul>
-<li>To the right of the stats container is the horizontal scroll bar which is used to pan across all the available content slots in your project. Users may click drag this slider, or use LINK Mode to map that to any hardware or input values.</li>
-</ul>
-<h3 id="log">Log</h3>
-<p>At the very bottom of our interface is the ‘Log’ component. Whenever users interact with the interface, AAVJ will send confirmation or error messages to the log for user awareness of what’s going on in the project.</p>
+<p><img alt="" src="../Images/StatsBar.png" /></p>
+<p>Below our layer grid, we will see our project FPS, as well as how much VRAM or video memory is loaded into the project. This will vary as the interface is used due to the dynamic ‘VRAM Cleanup Script’ AAVJ uses to manage memory on the fly.</p>
+<p>The word 'VRAM' is a clickable button that manually purges any unused VRAM from the scenes in your project. </p>
+<p>To the right of the stats container is the horizontal scroll bar which is used to pan across all the available content slots in your project. Users may click drag this slider, or use LINK Mode to map that to any hardware or input values.</p>
 <h3 id="control-section">Control Section</h3>
 <ul>
 <li>
@@ -907,17 +903,27 @@
 <p>Using the plus and minus symbols, we can add or remove additional <code>Component Slots</code> for drag and droppable custom components. See details on constructing an AAVJ compatible .tox component here.</p>
 <p>Custom Components can be any container-based .tox network, enabling panel capability and global op referencing for data sharing across your project. Users can build dynamic custom functionality in these components and leverage the ability of TouchDesigner in their own way.</p>
 <p>To the right of that are our panel containers for our Effects, as well as the exposed values that are working within our LINK system - which consists of MIDI, OSC, or any CHOP inputs we want to use to control our networks or interface. More Custom component slots are also available in this panel.</p>
+<h3 id="log">Log</h3>
+<p><img alt="" src="../Images/Log.png" /></p>
+<p>At the very bottom of our interface is the ‘Log’ component. Whenever users interact with the interface, AAVJ will send confirmation or error messages to the log for user awareness of what’s going on in the project. </p>
 <h2 id="building-compatible-networks">Building Compatible Networks</h2>
 <p>Let’s take a look at a simple AAVJ compatible content network, and go over just a few requirements for compatibility with AAVJ. You can find this network in the AAVJ file structure under ‘Assets’.</p>
 <ul>
 <li>
-<p>The first required part of our network is an Out TOP at the end of our Top output chain named ‘out1’. This is the operator that AAVJ references to output your content into the mix.</p>
+<p>To start, in a blank TouchDesigner project create a Base COMP named 'scene'. </p>
+<p>AAVJ Compatible scenes should always be Base COMPs, <strong>not container COMPs</strong>. Container COMPs use panel values which are not necessary for AAVJ scenes. Container COMPs should only be used for custom Components.</p>
+</li>
+<li>
+<p>Inside this Base COMP, as an example we can create a noise TOP. set the resolution to the resolution you typically use in your workflow, i.e. 1280x720 or 1920x1080.</p>
+</li>
+<li>
+<p>The first required part of our network is an Out TOP at the end of our TOP output chain named ‘out1’. This is the operator that AAVJ references to output your content into the mix.</p>
 </li>
 <li>
 <p>The next requirement of an AAVJ compatible network is a Fit TOP attached to our Out1 named ‘thumb’.</p>
 </li>
 </ul>
-<p>This will serve as the thumbnail that our interface displays for that network. A Text TOP can also be used as the input to the Fit TOP instead of an image.</p>
+<p>This will serve as the thumbnail that our interface displays for that network ( a Text TOP can also be used as the input to the Fit TOP instead of an image).</p>
 <ul>
 <li>
 <p>The fit operation should be set to ‘Fit Outside’, and the resolution set to 128x128 or 256x256 to save on VRAM.</p>
@@ -925,12 +931,8 @@
 <li>
 <p>Find the lock icon and lock this operator so we don’t eat up unnecessary resources in our interface.</p>
 </li>
-<li>
-<p>Lastly, use the letter U shortcut to navigate up one level and take a look at our Base Component. To add custom parameters to our base BaseComp to be used in our network, right-click the base COMP and hit Custom Parameters.</p>
-</li>
 </ul>
-<p>Here we can add parameters by type that will be attached to this component.</p>
-<p>To use those parameters in your network, go back inside and use a Parameter CHOP or Parameter DAT.</p>
+<p>To add custom parameters to a scene, right-click the base COMP and hit Custom Parameters. Here we can add parameters by type that will be attached to this component. To use those parameters in your network, go back inside and use a Parameter CHOP or Parameter DAT.</p>
 <h2 id="drag-n-drop">Drag N Drop</h2>
 <p>Let’s go ahead and drop our saved .tox file into our project at Layer 1 Slot 1.</p>
 <p>As you can see the thumbnail for that tox network appears in our project.</p>
