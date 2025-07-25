@@ -402,6 +402,48 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tool-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Bar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool Bar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#link-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-output-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Output Config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#column-launching" class="md-nav__link">
     <span class="md-ellipsis">
       Column Launching
@@ -419,6 +461,15 @@
   
     <nav class="md-nav" aria-label="Layers">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layer Level
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#blend-modes" class="md-nav__link">
@@ -439,9 +490,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#name" class="md-nav__link">
+  <a href="#layer-name" class="md-nav__link">
     <span class="md-ellipsis">
-      Name
+      Layer Name
     </span>
   </a>
   
@@ -591,7 +642,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settings" class="md-nav__link">
+  <a href="#settings_1" class="md-nav__link">
     <span class="md-ellipsis">
       Settings
     </span>
@@ -743,38 +794,61 @@
 <p>At the top, we have our <code>Header Bar</code> which will list the version of AAVJ we are using, as well as the name of our project.</p>
 <h3 id="composition-control">Composition Control</h3>
 <p>Beneath the toolbar on the left side are the master controls for your composition. </p>
-<p>![[CompositionControls.png]]</p>
+<p><img alt="" src="../Images/CompositionControls.png" /></p>
 <ul>
 <li>The ‘X’ button located to the left of the <code>Composition Fader</code> will trigger all layer <code>clear</code> buttons, effectively clearing all layers.</li>
 </ul>
-<p>To the right of that is the ‘Composition’ level fader. This will adjust the overall output opacity of the composition. This is reflect![[FaderFilteringButton.png]]ed in the ‘master output’ located in the bottom of the interface above the ‘preview output’.</p>
+<p>To the right of that is the ‘Composition’ level fader. This will adjust the overall output opacity of the composition. This is reflected in the ‘master output’ located in the bottom of the interface above the ‘Output Monitor’.</p>
+<h3 id="tool-bar">Tool Bar</h3>
+<p>In the tool bar on the left side, you will find some familiar items like File, Edit, View, and Help. Unlike previous versions of AAVJ, AAVJ 2025+ uses an internal saving system that packages all user inputs into a .TOX file as a project, rather than saving the .TOE file directly. This allows users to save and load compositions to be used in future versions of AAVJ as it develops. </p>
+<p><strong>Saving the .TOE file should be avoided completely in AAVJ 2025+.</strong></p>
+<p>In AAVJ 2025 On the right side, there are a few icons: </p>
+<p><img alt="" src="../Images/ToolbarIcons.png" /></p>
+<p>These are toggle buttons for LINK Mode, Screen Output Config, and Settings.</p>
+<h4 id="link-mode">Link Mode</h4>
+<p>is AAVJ's built in system for dynamically mapping UI elements with MIDI, OSC, DMX, etc. More on this later in the docs.</p>
+<h4 id="screen-output-config">Screen Output Config</h4>
+<p>Is a simple config window that allows you to send your AAVJ Composition to screens that you have available on your machine. in AAVJ 2025, this is very rudimentary and will be built out in future versions.</p>
+<h4 id="settings">Settings</h4>
+<p>The 'Settings' icon pops open the settings menu, where users can adjust their composition settings, set inputs and outputs, verify their user license, visit the documentation, discord link, etc. This is where users will adjust the main configurations for their project. </p>
 <h3 id="column-launching">Column Launching</h3>
-<p>On the left side of the <code>toolbar</code>, there are numbered buttons that will instantaneously launch an entire column in your project.</p>
+<p>To the right of the Composition Controls, there are numbered buttons that will instantaneously launch an entire column in your project: </p>
+<p><img alt="" src="../Images/Colbuttons.png" /></p>
+<p>These can be useful for preparing arrangements of visual elements into a vertical column, and launching them with a single cue. The column launch buttons adjacent to the Composition Controls will launch all slots below them, even those contained in a Layer Group.</p>
 <h3 id="layers">Layers</h3>
-<p>On the left, you will see our layer controls. </p>
+<p>On the left, you will see our Layer Controls. </p>
 <p><img alt="" src="../Images/LayerControl.png" /></p>
 <ul>
-<li>The X button, or 'clear' button, will transition the scene on that layer to a blank output Pressing this ‘X’ button twice in a row will leverage the <code>VRAM Cleanup Script</code> and <strong>unload</strong> the last played scene on that layer.</li>
+<li>The X button, or 'clear' button, will transition the scene on that layer to a blank output. Pressing this ‘X’ button twice in a row will leverage the <code>VRAM Cleanup Script</code> and <strong>unload</strong> the last played scene on that layer, purging its unused VRAM from our cache.</li>
 </ul>
+<h4 id="layer-level">Layer Level</h4>
+<p>The Layer Level fader controls the opacity of an individual layer. At '0', the layer is invisible to the overall mix. At '.5' , the layer is visible with a mix based on the blend mode selected for that layer. at '1.0', that layer fully overrides the layers below it in the mix. </p>
 <h4 id="blend-modes">Blend Modes</h4>
 <ul>
-<li>To the right of that, you’ll see the <code>blend mode</code> for this layer, leveraging all the blend modes in a typical composite TOP, blending this layer with the previous layer.</li>
+<li>
+<p>To the right of that, you’ll see the <code>blend mode</code> for this layer, leveraging all the blend modes in a typical composite TOP, blending this layer with the previous layer.</p>
+<p>NOTE: When using the 'Multiply' blend mode in combination with a layer with zero alpha, layer mix will appear as blank. This is inherently just how the Composite TOP handles this blend mode and can be confusing- so it is mentioned here. </p>
+</li>
 </ul>
 <h4 id="fader-filtering">Fader Filtering</h4>
 <ul>
-<li>Under that is the fader filtering for the level fader to ease your mixing. Press the <img alt="Fader Filtering" src="../Images/FaderFilteringButton.png" />  button to enable fader filtering, and adjust the value to increase or decrease filtering on that layer.</li>
+<li>
+<p>Under that is the fader filtering for the level fader to ease your mixing. It works by applying a filter CHOP to that value to smooth out sudden changes. Press the <img alt="Fader Filtering" src="../Images/FaderFilteringButton.png" />  button to enable fader filtering, and adjust the value to increase or decrease filtering on that layer.</p>
+<p>NOTE: This adds some CPU time, but can be useful for users with a mouse or touchpad for smoother mixing.</p>
+</li>
 </ul>
-<h4 id="name">Name</h4>
+<h4 id="layer-name">Layer Name</h4>
 <ul>
 <li>In the same layer control box, you will see the name of your layer, i.e., ‘Layer 1, 2, 3’ etc. Users can double-click that layer name to assign a different one manually.</li>
 </ul>
 <h4 id="order">Order</h4>
+<p><img alt="" src="../Images/LayerSwap.gif" /></p>
 <ul>
-<li>The order of layers can be swapped by right-click dragging the layer control box and dropping it onto another layer. This will affect the order in which these layers are composited into the mix.</li>
+<li>The order of layers can be swapped by <strong>right-click dragging</strong> the layer control box of one layer and dropping it onto another layer. This will affect the order in which these layers are composited into the mix.</li>
 </ul>
 <h4 id="transition-time">Transition Time</h4>
 <ul>
-<li>To the right of that is the transition time fader, which will determine how long it takes to fade between scenes on that layer. Users can use the vertical fader or enter a float value to determine the filter length of the transition to a new scene.</li>
+<li>To the right of the layer control box is the transition time fader, which will determine how long it takes to fade between scenes on that layer. Use the vertical fader or enter a float value to determine the filter length of the transition to a new scene.</li>
 </ul>
 <h4 id="scene-slots">Scene Slots</h4>
 <ul>
@@ -888,7 +962,7 @@
 </li>
 </ul>
 <h2 id="toolbar">Toolbar</h2>
-<h3 id="settings">Settings</h3>
+<h3 id="settings_1">Settings</h3>
 <p>Starting from the right side is the ‘cog wheel’ icon button which will expand the composition settings. Users can adjust the canvas resolution of the project, the number of layers, the number of slots in each layer, as well as which display they want to output to.</p>
 <h3 id="saving">Saving</h3>
 <p>To the left of the settings button is the ‘Save Project’ button. By clicking this button users can save their composition, as well as any changes they have made to the networks in the project.</p>
