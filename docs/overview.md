@@ -6,13 +6,16 @@
 
 At the top, we have our ```Header Bar``` which will list the version of AAVJ we are using, as well as the name of our project.
 
+
 ### Composition Control
 
 Beneath the toolbar on the left side are the master controls for your composition. 
 
+![[CompositionControls.png]]
+
 * The ‘X’ button located to the left of the ```Composition Fader``` will trigger all layer ```clear``` buttons, effectively clearing all layers.
 
-To the right of that is the ‘Composition’ level fader. This will adjust the overall output opacity of the composition. This is reflected in the ‘master output’ located in the bottom of the interface above the ‘preview output’.
+To the right of that is the ‘Composition’ level fader. This will adjust the overall output opacity of the composition. This is reflect![[FaderFilteringButton.png]]ed in the ‘master output’ located in the bottom of the interface above the ‘preview output’.
 
 ### Column Launching
 
@@ -22,7 +25,9 @@ On the left side of the ```toolbar```, there are numbered buttons that will inst
 
 On the left, you will see our layer controls. 
 
-* The X button, or clear button, will transition the scene on that layer to a blank output Pressing this ‘X’ button twice in a row will leverage the ```VRAM Cleanup Script``` and collapse the last played scene on that layer.
+![[LayerControl.png]]
+
+* The X button, or 'clear' button, will transition the scene on that layer to a blank output Pressing this ‘X’ button twice in a row will leverage the ```VRAM Cleanup Script``` and **unload** the last played scene on that layer.
 
 #### Blend Modes
 
@@ -30,7 +35,7 @@ On the left, you will see our layer controls.
 
 #### Fader Filtering
 
-* Under that is the fader filtering for the level fader to ease your mixing. Press the = button to enable fader filtering, and adjust the value to increase or decrease filtering on that layer.
+* Under that is the fader filtering for the level fader to ease your mixing. Press the ![[FaderFilteringButton.png]]  button to enable fader filtering, and adjust the value to increase or decrease filtering on that layer.
 
 #### Name
 
